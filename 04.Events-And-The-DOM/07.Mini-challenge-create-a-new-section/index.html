@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mini Challenge: Create a New Section With Javascript</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1 id="site-title"><span class="green">No Meat</span> Burgers</h1>
+      <nav>
+        <ul class="nav-inline">
+          <li class="nav-item">our burgers</li>
+          <li class="nav-item">history</li>
+        </ul>
+      </nav>
+    </header>
+    <img src="burger.jpg" />
+
+    <section class="recipes">
+      <h3>Home cooking time</h3>
+      <p>Some of our chefs recipes you can try at home</p>
+      <button>SEE ALL</button>
+      <div class="recipes_container">
+        <article>
+          <img src="burger.jpg" alt="" />
+          <h4>Ultimate Vegan</h4>
+          <div class="recipe_info">
+            <span>2 people</span> ~ <span>30 mins</span> ~
+            <span>457 calories</span>
+          </div>
+        </article>
+        <article>
+          <img src="burger.jpg" alt="" />
+          <h4>Spicy Bean Burger</h4>
+          <div class="recipe_info">
+            <span>4 people</span> ~ <span>40 mins</span> ~
+            <span>624 calories</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <script>
+      /* ========================================================================================================================================================
+      RECIPES HEADING
+      ======================================================================================================================================================== */
+      const recipesHeading = document.createElement("h3");
+      const recipesHeadingText = document.createTextNode("Home cooking time");
+      recipesHeading.appendChild(recipesHeadingText);
+
+      /* ========================================================================================================================================================
+      RECIPES INFO
+      ======================================================================================================================================================== */
+      const recipesInfoElement = document.createElement("p");
+      const recipesInfoText = document.createTextNode(
+        "Some of our chefs recipes you can try at home"
+      );
+      recipesInfoElement.appendChild(recipesInfoText);
+
+      /* ========================================================================================================================================================
+      RECIPES BUTTON
+      ======================================================================================================================================================== */
+      const recipesButton = document.createElement("button");
+      const recipesButtonText = document.createTextNode("SEE ALL");
+      recipesButton.appendChild(recipesButtonText);
+
+      /* ========================================================================================================================================================
+      RECIPES IMAGE
+      ======================================================================================================================================================== */
+      const recipesImage = document.createElement("img");
+      recipesImage.setAttribute("src", "burger.jpg");
+      recipesImage.setAttribute("alt", "burger image");
+
+      const clonedRecipesImage = recipesImage.cloneNode(true);
+
+      /* ========================================================================================================================================================
+      ARTICLE HEADING
+      ======================================================================================================================================================== */
+      const articleHeading = document.createElement("h4");
+      const articleHeadingText = document.createTextNode("Ultimate Vegan");
+      articleHeading.appendChild(articleHeadingText);
+      const clonedArticleHeading = articleHeading.cloneNode();
+      const clonedArticleHeadingText =
+        document.createTextNode("Spicy Bean Burger");
+      clonedArticleHeading.appendChild(clonedArticleHeadingText);
+
+      /* ========================================================================================================================================================
+      ARTICLE INFO
+      ======================================================================================================================================================== */
+      const articleInfo = document.createElement("span");
+      const articleInfoText = document.createTextNode("2 people");
+      articleInfo.appendChild(articleInfoText);
+      const clonedArticleInfo1 = articleInfo.cloneNode();
+      const articleInfoText1 = document.createTextNode("30 mins");
+      clonedArticleInfo1.appendChild(articleInfoText1);
+      const clonedArticleInfo2 = articleInfo.cloneNode();
+      const articleInfoText2 = document.createTextNode("457 calories");
+      clonedArticleInfo2.appendChild(articleInfoText2);
+      const clonedArticleInfo3 = articleInfo.cloneNode();
+      const articleInfoText3 = document.createTextNode("4 people");
+      clonedArticleInfo3.appendChild(articleInfoText3);
+      const clonedArticleInfo4 = articleInfo.cloneNode();
+      const articleInfoText4 = document.createTextNode("40 mins");
+      clonedArticleInfo4.appendChild(articleInfoText4);
+      const clonedArticleInfo5 = articleInfo.cloneNode();
+      const articleInfoText5 = document.createTextNode("624 calories");
+      clonedArticleInfo5.appendChild(articleInfoText5);
+
+      /* ========================================================================================================================================================
+      WRAPPERS
+      ======================================================================================================================================================== */
+      const recipeContainerDiv = document.createElement("div");
+      const articleFirstWrapper = document.createElement("article");
+      const articleSecondWrapper = document.createElement("article");
+      const recipesFirstContainerDiv = document.createElement("div");
+      const recipesSecondContainerDiv = document.createElement("div");
+      const recipesWrapper = document.createElement("section");
+
+      /* ========================================================================================================================================================
+      PUTTING IT ALL TOGETHER
+      ======================================================================================================================================================== */
+      recipesFirstContainerDiv.appendChild(articleInfo);
+      recipesFirstContainerDiv.appendChild(clonedArticleInfo1);
+      recipesFirstContainerDiv.appendChild(clonedArticleInfo2);
+
+      recipesSecondContainerDiv.appendChild(clonedArticleInfo3);
+      recipesSecondContainerDiv.appendChild(clonedArticleInfo4);
+      recipesSecondContainerDiv.appendChild(clonedArticleInfo5);
+
+      articleFirstWrapper.appendChild(recipesImage);
+      articleFirstWrapper.appendChild(articleHeading);
+      articleFirstWrapper.appendChild(recipesFirstContainerDiv);
+      articleFirstWrapper.appendChild(clonedRecipesImage);
+      articleFirstWrapper.appendChild(clonedArticleHeading);
+      articleSecondWrapper.appendChild(recipesSecondContainerDiv);
+
+      recipeContainerDiv.appendChild(articleFirstWrapper);
+      recipeContainerDiv.appendChild(articleSecondWrapper);
+
+      recipesWrapper.appendChild(recipesHeading);
+      recipesWrapper.appendChild(recipesInfoElement);
+      recipesWrapper.appendChild(recipesButton);
+      recipesWrapper.appendChild(recipeContainerDiv);
+
+      /* ========================================================================================================================================================
+      ADDING CLASSES
+      ======================================================================================================================================================== */
+      recipesWrapper.setAttribute("class", "recipes");
+      recipeContainerDiv.setAttribute("class", "recipes_container");
+      recipesFirstContainerDiv.setAttribute("class", "recipe_info");
+      recipesSecondContainerDiv.setAttribute("class", "recipe_info");
+
+      // ========= SECTION HEADING =========
+      const sectionHeading = document.createElement("h3");
+      const headingText = document.createTextNode(
+        "Helping the planet, one bite at a time..."
+      );
+      sectionHeading.appendChild(headingText);
+
+      // ========= IMAGE =========
+      const imageElement = document.createElement("img");
+      imageElement.setAttribute("src", "burger.jpg");
+      imageElement.setAttribute("alt", "burger image");
+
+      // ========= INFO TEXT =========
+      const infoSectionElement = document.createElement("p");
+      const infoSectionText = document.createTextNode(
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore aut unde sunt."
+      );
+      infoSectionElement.appendChild(infoSectionText);
+
+      // ========= BUTTON =========
+      const buttonElement = document.createElement("button");
+      const buttonText = document.createTextNode("BUY ONLINE");
+      buttonElement.appendChild(buttonText);
+
+      // ========= WRAPPERS =========
+      const sectionWrapper = document.createElement("section");
+      const contentWrapper = document.createElement("div");
+      const imageDivElement = document.createElement("div");
+      const textDivElement = document.createElement("div");
+
+      // ========= PUTTING IT ALL TOGETHER =========
+      textDivElement.appendChild(infoSectionElement);
+      textDivElement.appendChild(buttonElement);
+
+      imageDivElement.appendChild(imageElement);
+
+      contentWrapper.appendChild(imageDivElement);
+      contentWrapper.appendChild(textDivElement);
+
+      sectionWrapper.appendChild(sectionHeading);
+      sectionWrapper.appendChild(contentWrapper);
+
+      // ========= ADDING CLASSES =========
+      sectionWrapper.setAttribute("class", "planet_wrapper");
+      contentWrapper.setAttribute("class", "content");
+      imageDivElement.setAttribute("class", "image_section");
+      textDivElement.setAttribute("class", "info_section");
+
+      // ADD TO PAGE
+      // document.body.insertBefore(sectionWrapper, recipesWrapper);
+
+      document.body.append(recipesWrapper);
+      // document.querySelector(".recipes")
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Array Destructuring</title>
+  </head>
+
+  <body>
+    <h1 id="title">Array Destructuring</h1>
+    <script>
+      let posts = [
+        { title: "How to learn Javascript", body: "bla bla bla" },
+        { title: "How to be a ninja", body: "bla bla bla" },
+        { title: "How to be a ninja part 2", body: "bla bla bla" },
+      ];
+      // const [post1, post2, post3] = posts;
+      // const post1 = posts[0];
+      // const post2 = posts[1];
+      // const post3 = posts[2];
+      const [post1, ...others] = posts;
+      console.log(others);
+    </script>
+  </body>
+</html>

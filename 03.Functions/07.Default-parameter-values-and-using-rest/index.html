@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Default Parameter Values & Using Rest</title>
+  </head>
+
+  <body>
+    <h1 id="title">Default Parameter Values & Using Rest</h1>
+    <script>
+      // const currencySymbol = "$";
+      // function formatMoney(amount, currency = currencySymbol) {
+      //   return `${currency} ${amount.toFixed(2)}`;
+      // }
+      // const price = formatMoney(100);
+      // console.log(price);
+
+      function averageAge(...ages) {
+        const total = ages.reduce((total, current) => current + total);
+        return total / ages.length;
+      }
+      const average = averageAge(32, 45, 67, 84, 21, 11);
+      console.log(average);
+    </script>
+  </body>
+</html>

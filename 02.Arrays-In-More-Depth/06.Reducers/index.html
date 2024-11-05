@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reducers</title>
+  </head>
+
+  <body>
+    <h1 id="title">Reducers</h1>
+    <script>
+      let numbers = [72, 33, 108, 222, 6];
+      const result = numbers.reduce(total);
+      const average = result / numbers.length;
+      console.log(average);
+
+      function total(total, currentValue) {
+        // loop 1- 0, 72
+        // loop 2- 72, 33
+        // loop 3- 105, 108
+        // loop 4 213, 222
+        // loop 5 435, 6
+        // loop 6 441
+        return total + currentValue;
+      }
+    </script>
+  </body>
+</html>
